@@ -1,0 +1,132 @@
+.game-world {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.world-section {
+  background-color: var(--secondary-background, #16213e);
+  border-radius: 12px;
+  min-height: 200px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-left: 5px solid var(--section-color);
+  will-change: transform;
+}
+
+.world-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1;
+}
+
+.world-section:hover::before {
+  opacity: 1;
+}
+
+.section-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.section-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--section-color);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.section-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 1rem;
+}
+
+.section-icon::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--section-color);
+  opacity: 0.3;
+}
+
+/* Section specific styles */
+.section-skills .section-icon::after {
+  content: "🔥";
+  font-size: 1.5rem;
+}
+
+.section-projects .section-icon::after {
+  content: "✨";
+  font-size: 1.5rem;
+}
+
+.section-about .section-icon::after {
+  content: "🔮";
+  font-size: 1.5rem;
+}
+
+.section-contact .section-icon::after {
+  content: "⚡";
+  font-size: 1.5rem;
+}
+
+/* Active state */
+.world-section.active {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-left-width: 8px;
+}
+
+/* Animation for active sections */
+@keyframes pulse-border {
+  0%,
+  100% {
+    border-color: var(--section-color);
+  }
+  50% {
+    border-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+.world-section.active {
+  animation: pulse-border 2s infinite;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .game-world {
+    grid-template-columns: 1fr;
+  }
+}
