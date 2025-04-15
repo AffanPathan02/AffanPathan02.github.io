@@ -24,24 +24,41 @@ function App() {
   // Cinematic intro effect
   useEffect(() => {
     if (showIntro && introTextRef.current) {
-      // First text animation
-      anime({
-        targets: introTextRef.current,
-        opacity: [0, 1],
-        duration: 2000,
-        easing: "easeInOutQuad",
-        complete: () => {
-          // After first line, show second line
-          setTimeout(() => {
-            setIntroCopy("I wonder who is the poor fellow...");
+      const firstPhrase = "Yet another boring portfolio.";
+      const secondPhrase = "I wonder who is the poor fellow...";
 
-            // Second text animation
-            anime({
-              targets: introTextRef.current,
-              opacity: [0, 1],
-              duration: 2000,
-              easing: "easeInOutQuad",
-              complete: () => {
+      // Clear any existing text
+      setIntroCopy("");
+
+      // Type out first phrase with controlled timing
+      let currentIndex = 0;
+      const typeFirstPhrase = setInterval(() => {
+        if (currentIndex < firstPhrase.length) {
+          setIntroCopy((prev) => {
+            // Return the full substring up to current index to prevent character duplication
+            return firstPhrase.substring(0, currentIndex + 1);
+          });
+          currentIndex++;
+        } else {
+          clearInterval(typeFirstPhrase);
+
+          // Pause before starting second phrase
+          setTimeout(() => {
+            // Clear the text before starting second phrase
+            setIntroCopy("");
+
+            // Type out second phrase
+            let secondIndex = 0;
+            const typeSecondPhrase = setInterval(() => {
+              if (secondIndex < secondPhrase.length) {
+                setIntroCopy((prev) => {
+                  // Return the full substring up to current index to prevent character duplication
+                  return secondPhrase.substring(0, secondIndex + 1);
+                });
+                secondIndex++;
+              } else {
+                clearInterval(typeSecondPhrase);
+
                 // Fade out and proceed to actual intro
                 setTimeout(() => {
                   anime({
@@ -54,11 +71,16 @@ function App() {
                     },
                   });
                 }, 2000);
-              },
-            });
-          }, 3000);
-        },
-      });
+              }
+            }, 100); // Speed of typing for second phrase
+          }, 1500); // Pause between phrases
+        }
+      }, 100); // Speed of typing for first phrase
+
+      // Clean up intervals on component unmount
+      return () => {
+        clearInterval(typeFirstPhrase);
+      };
     }
   }, [showIntro]);
 

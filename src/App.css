@@ -269,14 +269,33 @@
 
 .intro-text {
   font-size: 2.5rem;
-  font-family: "Times New Roman", serif;
-  font-style: italic;
+  font-family: "Satisfy", "Brush Script MT", cursive;
   text-align: center;
   max-width: 80%;
-  opacity: 0;
   line-height: 1.6;
   letter-spacing: 1px;
   text-shadow: 0 0 10px rgba(232, 201, 153, 0.5);
+  color: #f8eedf;
+  position: relative;
+  min-height: 4rem;
+}
+
+.intro-text::after {
+  content: "|";
+  position: absolute;
+  margin-left: 5px;
+  animation: cursor-blink 1s infinite;
+  color: #e8c999;
+}
+
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 /* New Cinematic Intro Sequence Styles */
