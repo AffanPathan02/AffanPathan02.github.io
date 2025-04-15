@@ -36,11 +36,6 @@ jobs:
             sed -i "s|plugins: \[react()\],|plugins: [react()], base: '/AffanPathan02.github.io/',|g" vite.config.js
           fi
 
-      - name: 📤 Upload build output
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: dist
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
