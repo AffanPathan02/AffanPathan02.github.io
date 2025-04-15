@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:gh-pages": "DEPLOY_TARGET=gh-pages vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "serve": "vite build && bunx serve dist --single"
   },
   "dependencies": {
     "animejs": "^3.2.1",
