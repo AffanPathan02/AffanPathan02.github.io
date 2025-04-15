@@ -3,7 +3,7 @@ name: Deploy Vite + React App
 on:
   push:
     branches:
-      - initial
+      - main
 
 permissions:
   contents: read
@@ -28,6 +28,13 @@ jobs:
 
       - name: 🛠 Build the app
         run: npm run build
+
+      - name: ⚙️ Configure base path for Vite
+        run: |
+          if [ -f "vite.config.js" ]; then
+            echo "Updating vite.config.js with base path"
+            sed -i "s|plugins: \[react()\],|plugins: [react()], base: '/AffanPathan02.github.io/',|g" vite.config.js
+          fi
 
       - name: 📤 Upload build output
         uses: actions/upload-pages-artifact@v2
