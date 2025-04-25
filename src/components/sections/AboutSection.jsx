@@ -17,32 +17,25 @@ const AboutSection = ({ isActive }) => {
   // Journey stages as a mystical timeline
   const journeyStages = [
     {
-      period: "The Awakening",
-      year: "2015-2018",
+      period: "The Awakening at D. Y. Patil College of Engineering, India ",
+      year: "2020-2024",
       description:
         "Discovered the secrets of code and began studying the ancient texts of programming.",
       icon: "🌅",
     },
     {
-      period: "The Apprenticeship",
-      year: "2018-2020",
+      period: "The Apprenticeship at GrovNest Digi LLP",
+      year: "January 2023 - July 2023",
       description:
         "Trained under the guidance of master craftsmen, learning to forge simple but powerful artifacts.",
       icon: "⚒️",
     },
     {
-      period: "The Wanderer",
-      year: "2020-2022",
+      period: "The Wanderer at Orbiz Analytics",
+      year: "July 2023 - Present",
       description:
         "Ventured across different realms, gathering knowledge and facing challenges to enhance my craft.",
       icon: "🧭",
-    },
-    {
-      period: "The Conjurer",
-      year: "2022-Present",
-      description:
-        "Mastered the art of creating complex enchantments and sharing wisdom with fellow seekers.",
-      icon: "✨",
     },
   ];
 

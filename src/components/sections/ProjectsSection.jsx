@@ -7,10 +7,10 @@ const ProjectsSection = ({ isActive }) => {
 
   const projects = [
     {
-      title: "Crystal Viewer",
+      title: "F1 API",
       description:
-        "A scrying tool that reveals dynamic visualizations of complex data patterns.",
-      tags: ["React", "D3.js", "API Integration"],
+        "A RESTful API for F1 data",
+      tags: ["Python", "Flask", "Docker", "PostgreSQL"],
       icon: "💎",
     },
     {

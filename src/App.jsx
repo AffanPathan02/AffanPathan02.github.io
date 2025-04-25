@@ -268,7 +268,7 @@ function App() {
       ) : (
         <>
           <header className="game-header">
-            <h1>Portfolio Adventure</h1>
+            <h1>Affan's Portfolio Adventure</h1>
           </header>
 
           {!gameStarted ? (

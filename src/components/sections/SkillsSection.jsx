@@ -6,24 +6,19 @@ const SkillsSection = ({ isActive }) => {
   const sectionRef = useRef(null);
 
   const skills = [
-    { name: "HTML/CSS", level: 90, category: "Elemental Weaving", icon: "🌋" },
+    { name: "C++ / C", level: 88, category: "Motion Enchantment", icon: "💫" },
+    { name: "Python", level: 85, category: "Menacing Serpent", icon: "✨" },
     { name: "JavaScript", level: 85, category: "Arcane Scripts", icon: "⚡" },
+    { name: "NodeJS", level: 75, category: "Shadowy Backend", icon: "🌑" },
     { name: "React", level: 80, category: "Mystical Constructs", icon: "🔮" },
-    { name: "Node.js", level: 75, category: "Shadowy Backend", icon: "🌑" },
-    {
-      name: "UI/UX Design",
-      level: 85,
-      category: "Illusion Crafting",
-      icon: "✨",
-    },
-    {
-      name: "Animation",
-      level: 88,
-      category: "Motion Enchantment",
-      icon: "💫",
-    },
+    { name: "MongoDB", level: 78, category: "Forbidden Archives", icon: "📜" },
+    { name: "Blockchain", level: 72, category: "Chains of Fate", icon: "⛓️" },
+    { name: "Solidity", level: 70, category: "Smart Sigils", icon: "🧿" },
+    { name: "MySQL", level: 82, category: "Crystal Datacore", icon: "💎" },
+    { name: "Git", level: 87, category: "Chrono Scrolls", icon: "📘" },
+    { name: "Linux", level: 80, category: "Penguin Forge", icon: "🐧" },
+    { name: "Docker", level: 77, category: "Container Alchemy", icon: "⚗️" }
   ];
-
   useEffect(() => {
     if (isActive && sectionRef.current) {
       // Animate the section entrance

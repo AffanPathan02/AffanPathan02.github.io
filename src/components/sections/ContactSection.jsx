@@ -16,25 +16,25 @@ const ContactSection = ({ isActive }) => {
       name: "Ethereal Mail",
       icon: "✉️",
       desc: "Send a scroll through the ethereal planes",
-      link: "mailto:example@realm.com",
+      link: "mailto:pathan.affan02@gmail.com",
     },
     {
       name: "Crystal Sphere",
       icon: "🔮",
       desc: "Commune through the LinkedIn crystal sphere",
-      link: "https://linkedin.com/in/yourprofile",
+      link: "https://www.linkedin.com/in/affan-pathan-67431a20a/",
     },
     {
       name: "Shadow Network",
       icon: "🦉",
-      desc: "Find me in the Twitter shadow realm",
-      link: "https://twitter.com/yourhandle",
+      desc: "Find me in the X shadow realm",
+      link: "https://x.com/Affan_Pathan02",
     },
     {
       name: "Code Repository",
       icon: "📚",
       desc: "Examine my spellbook of code incantations",
-      link: "https://github.com/yourusername",
+      link: "https://github.com/AffanPathan02",
     },
   ];
 
